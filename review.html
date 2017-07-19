@@ -9,6 +9,7 @@
 	<script>	
 	</script>
 	<style>
+	
 	body {
 		background-image: url("wallpaper.jpg");
 		background-repeat: no-repeat;
@@ -21,22 +22,6 @@
 	#ph:hover {
 		color: rgb(255, 255, 100);
 	}
-
-
-
-
-.center {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
-
-
-
 
 	.star-rating {
   font-size: 0;
@@ -117,29 +102,31 @@
 
 
 </style>
-   <title>SignUP/LogIN</title>
+   <title>Phone Review</title>
    
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
+	<div class="navbar-header">
+	  <a id="br" class="navbar-brand" href="#"><span id="ph" class="glyphicon glyphicon-phone"></span> BRICKED PHONES</a>
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-  
-	<a id="br" class="navbar-brand" href="#"><span id="ph" class="glyphicon glyphicon-phone"></span> BRICKED PHONES</a>
-    <form class="navbar-form navbar-left">
-	<div class="input-group">
+	</div>
+    
+  <div class="collapse navbar-collapse" id="myNavbar">
+	  <form class="navbar-form navbar-left">
+	  <div class="input-group">
 		<input type="text" class="form-control" placeholder="Search">
 			<div class="input-group-btn">
 				<button class="btn btn-default" type="submit">
 				<i class="glyphicon glyphicon-search"></i>
 				</button>
 			</div>
-	</div>
-  </form>
-  <div class="collapse navbar-collapse" id="myNavbar">
+	  </div>
+	  </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -150,50 +137,47 @@
 
 
 <!---My Code -->
-<div style="height:100%;width:100%;padding:30px;padding:20px;">
-	<h1 style="color:yellow;">Your Review</h1>
-	<br>
-<div style="display:table-cell; vertical-align:middle; text-align:center;float:left;height:440px;width:30%;padding:30px;border-radius:20px;">
-	<centre>
-		<img height="300px" width="300px" src="phone.jpg">
-		<br>	
-		<br>
-		<h2 style="color:white;">Moto E5</h2>
-	</centre>
-</div>
-<div style="float:right;height:100%;width:65%;border:2px solid grey;padding:30px;border-radius:20px;">
-	<form id="usrform" name="usrform" method="post">
-	<br>
-	<b style="color:white;">Title:</b>
-	<br>
-	<input type="text" name="title" id="title" placeholder="Enter title" style="width:100%;">
-	<br>
-	<br>
-	<b style="color:white;">Your Review:</b>
-	<br>
-	<textarea id="review" name="review" form="usrform" placeholder="Enter review" rows="5" style="width:100%;"></textarea>
-	<br>
-	<br>
-	<b style="color:white;">Rate this Phone(1-10) :</b>
-	<br>
-	<span class="star-rating">
-		<input type="radio" name="rating" value="1" id="1"><i></i>
-		<input type="radio" name="rating" value="2" id="2"><i></i>
-		<input type="radio" name="rating" value="3" id="3"><i></i>
-		<input type="radio" name="rating" value="4" id="4"><i></i>
-		<input type="radio" name="rating" value="5" id="5"><i></i>
-		<input type="radio" name="rating" value="6" id="6"><i></i>
-		<input type="radio" name="rating" value="7" id="7"><i></i>
-		<input type="radio" name="rating" value="8" id="8"><i></i>
-		<input type="radio" name="rating" value="9" id="9"><i></i>
-		<input type="radio" name="rating" value="10" id="10"><i></i>
-	</span>
-	<br>
-	<br>
-	<center><input type="submit" name="Submit" id="submit" style="color: blue;border-radius:20px;"></center>
-	<br>
-	</form>
-</div>
+<div class="container">
+	<h1 style="color:yellow;margin-top:120px;">Your Review</h1>
+	<div class="row"style="background:lightgrey;color:black">
+		<div class="col-xs-4" style="padding:30px">
+			<img style="margin-top:30px;" src="phone.jpg">
+			<br>	
+			<h3 style="margin-left:60px;"><b>Moto E5</b></h3>
+		</div>
+		<div class="col-xs-8">
+			<form>
+			  <div class="form-group" style="margin-top:30px;">
+				<label for="title">Title :</label>
+				<input type="text" class="form-control" id="title" placeholder="Give a title!">
+				<br>
+				<label for="review">Write your review :</label>
+				<textarea rows="5" class="form-control" id="review" placeholder="Keep it short and brief!"></textarea>
+				<br>
+				<label for="rating">Rate the phone : <span id="rate" style="color:yellow"></span></label>
+				<br>
+				<select class="form-control" id="sel1">
+					<option></option>
+					<option>0</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+				</select>
+				<br>
+				<br>
+				<center><button type="submit" class="btn btn-primary btn-lg">Submit</button></center>
+				<br>
+			  </div>
+			</form>
+		</div>
+	</div>
 </div>
 <script>
 	/*
