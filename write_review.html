@@ -26,7 +26,19 @@
 	#home:hover {
 		color: rgb(255, 255, 100);
 	}
-
+	
+	.polaroid {
+			width:80%;
+			margin: 80px 0 0 30px;
+			background-color: white;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+	
+	label {
+		padding: 10px;
+	}
+	
+	
 	</style>
 </head>
 
@@ -65,10 +77,13 @@
 <div class="container">
 	<h1 style="color:yellow;margin-top:120px;">Your Review</h1>
 	<div class="row"style="background:lightgrey;color:black">
-		<div class="col-xs-4" style="padding:30px">
-			<img style="margin-top:30px;" src="phone.jpg">
-			<br>	
-			<h3 style="margin-left:60px;"><b>Moto E5</b></h3>
+		<div class="col-xs-4">
+			<div class="polaroid">
+				<img id="phone"style="width:100%" src="phone.jpg">
+				<div class="container">
+					<label for="#phone">Moto G5</label>
+				</div>
+			</div>
 		</div>
 		<div class="col-xs-8">
 			<form>
