@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script>
-	</script>
+	<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+
 	<style>
 	body {
 		background-image: url("wallpaper.jpg");
-		background-size: 100% 100%;
-		background-repeat: repeat-y;
-		
+		font-family: 'Titillium Web',sans-serif;
 	}
+	
 	#home {
 		color: white;
-		font-family: Helvetica;
-		font-size: 1.5em;
+		font-size: 1.7em;
+		transition: 0.5s ease;
 	}
 	
 	#home:hover {
@@ -85,11 +85,10 @@
 	  -ms-transform: translate(-50%, -50%);
 	}
 
-	</style>
+  </style>
+  </head>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-   <title>Bootstrap 101 Template</title>
-   
- 
+ <title>Home | Bricked Phones</title>
  <body>
  <!--- =========================================
 			NAVBAR
@@ -98,7 +97,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
 	<div class="navbar-header">
-	  <a id="br" class="navbar-brand" href="#"><span id="ph" class="glyphicon glyphicon-phone"></span> BRICKED PHONES</a>
+	  <a id="home" class="navbar-brand" href="#"><span class="glyphicon glyphicon-phone"></span> BRICKED PHONES</a>
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -109,7 +108,7 @@
   <div class="collapse navbar-collapse" id="myNavbar">
 	  <form class="navbar-form navbar-left">
 	  <div class="input-group">
-		<input type="text" class="form-control" placeholder="Search">
+		<input type="text" class="form-control" placeholder="Search for a phone">
 			<div class="input-group-btn">
 				<button class="btn btn-default" type="submit">
 				<i class="glyphicon glyphicon-search"></i>
@@ -142,15 +141,27 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src="https://cdn.casetify.com/img/collection/category_banner/desktop/SamsungS8_1200x300.jpg" alt="Los Angeles">
+      <img src="https://cdn.casetify.com/img/collection/category_banner/desktop/SamsungS8_1200x300.jpg">
+	  <div class="carousel-caption" style="text-align:left;text-shadow: 0.5px 1px black;">
+		<h3><b>Welcome to Bricked Phones.</b></h3>
+		<p>Check out for latest smartphones and reviews.</p>
+	  </div>
     </div>
 
     <div class="item">
-      <img src="https://www.casetify.com/img/collection/category_banner/desktop/~v2/2.jpg" alt="Chicago">
+      <img src="https://www.casetify.com/img/collection/category_banner/desktop/~v2/2.jpg">
+	  <div class="carousel-caption" style="text-align:right;text-shadow: 0.5px 1px black;">
+		<h3><b>One destination for top critic reviews.</b></h3>
+		<p>Find out what your favourite tech critic has to say about your smartphone.</p>
+	  </div>
     </div>
 
     <div class="item">
-      <img src="https://pbs.twimg.com/media/C-3B_XhXkAAfPFW.jpg" alt="New York">
+      <img src="https://pbs.twimg.com/media/C-3B_XhXkAAfPFW.jpg">
+	  <div class="carousel-caption" style="text-align:right;text-shadow: 0.5px 1px black;">
+		<h3><b>Share about your smartphone experience.</b></h3>
+		<p>Write your own reviews and share them with the community.</p>
+	  </div>
     </div>
   </div>
 
