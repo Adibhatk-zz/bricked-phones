@@ -1,9 +1,11 @@
 var express = require('express');
 var app = express();
 var path = require('path');
+var root = process.cwd();
+
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname + '/home.html'));
+    res.sendFile(path.join(__dirname+ '/home.html'));
 });
 
 app.get('/signup',function(req,res){
@@ -26,9 +28,6 @@ app.get('/phone_review',function(req,res){
 	res.sendFile(path.join(__dirname + '/phone_review.html'));
 });
 
-var server = app.listen(8081, function () {
-    var host = server.address().address
-    var port = server.address().port
-
-    console.log("Example app listening at http://%s:%s", host, port)
+app.listen(8080, function () {
+    console.log('Example app listening on port 8080!');
 });
