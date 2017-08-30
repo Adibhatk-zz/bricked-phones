@@ -7,7 +7,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
-	
+	<script src="cookie.js"></script>
+	<script src="signup.js"></script>
+
 	<style>
 	body {
 	  background: url("wallpaper.jpg");
@@ -18,18 +20,8 @@
 	#home {
 		color: white;
 		font-size: 1.7em;
-		transition: 0.5 ease;
 	}
 	
-	#home:hover {
-		color: rgb(255, 255, 100);
-	}
-	
-
-	*, *:before, *:after {
-	  box-sizing: border-box;
-	}
-
 	a {
 	  text-decoration: none;
 	  color: #1ab188;
@@ -39,20 +31,27 @@
 	a:hover {
 	  color: #179b77;
 	}
-
+	
 	.form {
 	  background: rgba(19, 35, 47, 0.9);
-	  padding: 40px;
+	  padding: 30px;
 	  max-width: 600px;
-	  margin: 140px auto;
+	  margin: 15px auto;
 	  border-radius: 4px;
 	  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 	}
-
+	
+	.header {
+		margin: 85px 0 50px 0;
+		color: white;
+		text-shadow: 3px 2px black;
+		text-align: center;
+	}
+	
 	.tab-group {
 	  list-style: none;
 	  padding: 0;
-	  margin: 0px 0 40px 0;
+	  margin: 0px 0 30px 0;
 	}
 	.tab-group:after {
 	  content: "";
@@ -86,25 +85,19 @@
 	  display: none;
 	}
 
-	h1 {
-	  text-align: center;
-	  color: #ffffff;
-	  font-weight: 300;
-	  margin: 0 0 40px;
-	}
-
 	label {
 	  position: absolute;
 	  -webkit-transform: translateY(6px);
 			  transform: translateY(6px);
 	  left: 13px;
-	  color: rgba(255, 255, 255, 0.5);
+	  color: white;
 	  -webkit-transition: all 0.25s ease;
 	  transition: all 0.25s ease;
 	  -webkit-backface-visibility: hidden;
 	  pointer-events: none;
 	  font-size: 22px;
 	}
+	
 	label .req {
 	  margin: 2px;
 	  color: #1ab188;
@@ -117,7 +110,7 @@
 	  font-size: 14px;
 	}
 	label.active .req {
-	  opacity: 0;
+	  opacity: 1;
 	}
 
 	label.highlight {
@@ -193,13 +186,8 @@
 	  width: 100%;
 	}
 
-	.forgot {
-	  margin-top: -20px;
-	  text-align: right;
-	}
-
-	</style>
-   </head>
+   </style>
+  </head>
    
 <title>Sign Up | Login</title>
    
@@ -207,14 +195,17 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
 	<div class="navbar-header">
-	  <a id="home" class="navbar-brand" href="#"><span class="glyphicon glyphicon-phone"></span> BRICKED PHONES</a>
+	  <div id="home" class="navbar-brand"><span class="glyphicon glyphicon-phone"></span> BRICKED PHONES</div>
 	</div>
   </div>
 </nav>
 
 <!--My code-->
-
-<div class="form">
+ <div class="header">
+		<h1>Welcome to Bricked Phones.<h1>
+		<h3><span>Sign up </span>or <span>Log in </span>to continue. Hot phones coming up!<h3>
+ </div>
+ <div class="form">
       <ul class="tab-group">
         <li class="tab active"><a href="#signup">Sign Up</a></li>
         <li class="tab"><a href="#login">Log In</a></li>
@@ -222,67 +213,56 @@
       
       <div class="tab-content">
         <div id="signup">   
-		  <h1>Sign Up For Free.</h1>
-		  <form action="/" method="post">
             <div class="field-wrap">
               <label>
-                Username<span class="req">*</span>
+                Username
               </label>
-              <input type="text"required autocomplete="off" />
+              <input type="text" required  name="username" id="suname"/>
             </div>
 
 			  <div class="field-wrap">
 				<label>
-				  Email Address<span class="req">*</span>
+				  Password
 				</label>
-				<input type="email"required autocomplete="off"/>
+				<input type="password" required name="password" id="spwd"/>
 			  </div>
-          
+			  <p style="color:white;margin-top:-35px;float:right;">Minimum length: 8</p>
 			  <div class="field-wrap">
 				<label>
-				  Set A Password<span class="req">*</span>
+				  Confirm Password
 				</label>
-				<input type="password"required autocomplete="off"/>
+				<input type="password" required name="password" id="cpwd" onkeydown = "if (event.keyCode == 13) signup()"/>
 			  </div>
-          
-			   <button type="submit" class="button button-block"/>Get Started</button>
-          </form>
-
-        </div>
-		<div id="login">   
-		  <h1>Welcome Back!</h1>
-          <form action="/" method="post">
-          
-            <div class="field-wrap">
+			  <button id="sign-btn" class="button button-block" onclick="signup()"/>Get Started</button>
+		</div>  
+		
+		<!-- LOGIN -->
+		
+		<div id="login">
+		  <div class="field-wrap">
             <label>
-              Email Address<span class="req">*</span>
+              Username
             </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
+            <input type="text" required id="luname"/>
+		  </div>
           
           <div class="field-wrap">
             <label>
-              Password<span class="req">*</span>
+              Password
             </label>
-            <input type="password"required autocomplete="off"/>
+            <input type="password" required id="lpwd" onkeydown = "if (event.keyCode == 13) login()"/>
           </div>
-          
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
-          <button class="button button-block"/>Log In</button>
-          
-          </form>
-
+		  
+		  <button class="button button-block" onclick="login()"/>Log In</button>
         </div>
-        
-      </div><!-- tab-content -->
+    </div><!-- tab-content -->
       
 </div> <!-- /form -->
 
 <script>	
     $('.form').find('input, textarea').on('keyup blur focus', function (e) {
-    var $this = $(this),
-      label = $this.prev('label');
+    var $this = $(this);
+     label = $this.prev('label');
 
 	  if (e.type === 'keyup') {
 			if ($this.val() === '') {
@@ -322,7 +302,8 @@ $('.tab a').on('click', function (e) {
   $(target).fadeIn(600);
   
 });
-	</script>
+
+</script>
 <!--Done-->
 </body>
 </html>

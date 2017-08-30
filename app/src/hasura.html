@@ -1,0 +1,22 @@
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="cookie.js"></script>
+	<script>
+		function create(){
+		Cookies.set('name','Aditya',{expires:7});
+		Cookies.set('age',21,{expires:7});
+		alert("Success!");
+		}
+		window.onreload = function(){
+			Cookies.get('name');
+		}
+	</script>
+	<title>Signup</title>
+	</head>
+	<body>
+		<input type="button" value="Create cookies" onclick="create()">
+		<p id="obj"></p>
+	</body>
+	
+</html>

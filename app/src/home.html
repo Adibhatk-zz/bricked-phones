@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
-	<meta charset="utf-8">
+    <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
-
+	<script src="cookie.js"></script>
+	<script src="main.js"></script>
 	<style>
 	body {
 		background-image: url("wallpaper.jpg");
@@ -49,15 +49,17 @@
 		overflow: auto;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 		margin: 5px 30px 0px 30px;
+		cursor: pointer;
 		}
 	
 	.img-container {
 		position: relative;
 		width: auto;
+		background: white;
 	}
 	
 	.image {
-		  width: 200px;
+		  width: 220px;
 		  height: 240px;
 	}
 	.overlay {
@@ -85,11 +87,11 @@
 	  -ms-transform: translate(-50%, -50%);
 	}
 
-  </style>
-  </head>
-
- <title>Home | Bricked Phones</title>
- <body>
+	</style>
+<title>Home | Bricked Phones</title>
+</head>
+<body>
+<div id="header" class="container-fluid"></div>
  <!--- =========================================
 			NAVBAR
 ============================================ -->
@@ -97,7 +99,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
 	<div class="navbar-header">
-	  <a id="home" class="navbar-brand" href="#"><span class="glyphicon glyphicon-phone"></span> BRICKED PHONES</a>
+	  <a id="home" class="navbar-brand" href="/home"><span class="glyphicon glyphicon-phone"></span> BRICKED PHONES</a>
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -106,16 +108,16 @@
 	</div>
     
   <div class="collapse navbar-collapse" id="myNavbar">
-	  <form class="navbar-form navbar-left">
+	 <!-- <form class="navbar-form navbar-left">
 		<input type="text" class="form-control" placeholder="Search for a phone" style="width:100%">
-	  </form>
+	  </form> -->
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		<li><a id="user" ><span class="glyphicon glyphicon-user"></span> Hello, </a></li>
+		<li><a onclick="logout()"><span class="glyphicon glyphicon-log-out"></span>  Logout</a></li>
       </ul>
     </div>
   </div>
-</nav>
+</nav> 
 <br>
 <br>
 <!-- =======================================================
@@ -150,7 +152,7 @@
     </div>
 
     <div class="item">
-      <img src="https://pbs.twimg.com/media/C-3B_XhXkAAfPFW.jpg">
+      <img src="http://www.tg.org/wp-content/uploads/2017/01/ATG_ContactUs_1200x300.jpg">
 	  <div class="carousel-caption" style="text-align:right;text-shadow: 1px 1px black;">
 		<h3><b>Share about your smartphone experience.</b></h3>
 		<p>Write your own reviews and share them with the community.</p>
@@ -174,22 +176,18 @@
 
 <div name="new-arrivals">
  <h3>New Arrivals<h3>
- <div class="scrollmenu">
-	  <a href="#home"><div class="img-container"><img src="http://asset5.ckassets.com/resources/image/staticpage_images/moto-g4-plus-2oct.jpg" class="image"><div class="overlay"><div class="text">Moto G5 plus<br><br><span class="glyphicon glyphicon-thumbs-up"></span> 90%</div></div></div></a>
+	<div id="new-phones" class="scrollmenu"></div>
 </div>
-</div>
-
 <br>
 <br>
 
 <div name="top-ten">
-<h3>Top 10<h3>
-<div class="scrollmenu">
-		  <a href="#home"><div class="img-container"><img src="http://asset5.ckassets.com/resources/image/staticpage_images/moto-g4-plus-2oct.jpg" class="image"><div class="overlay"><div class="text">Moto G5 plus<br><br><span class="glyphicon glyphicon-thumbs-up"></span> 90%</div></div></div></a>
+	<h3>Top 10<h3>
+		<div id="top-phones" class="scrollmenu"></div>
 </div>
 </div>
-
-
-</div>
+<script>
+	$(function(){home();});
+</script>
 </body>
 </html>
